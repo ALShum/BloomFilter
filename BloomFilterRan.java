@@ -10,11 +10,11 @@ public class BloomFilterRan extends AbstractBloomFilter {
 	
 	/**
 	 * Creates a new bloom filter with Random hash function.  
-	 * Due to how to the random hash function is created, the inputted bitsPerElement
-	 * will be a lower bound.  This is due to the fact that the random hash function
-	 * depends on the length of the bloom filter bit array to be prime.  As a result
-	 * after calculating the inputted bitsPerElement * setSize, the actual length of the 
-	 * bloom filter will be the next largest prime number.
+	 * Due to how the random hash function is created, the user inputted bitsPerElement
+	 * will be a lower bound.  The random hash function depends on the length of the
+	 * bit array to be prime.  Because of this, if the bit lenth corresponding to the inputted
+	 * bitsPerElement is not prime, the actual length of the bloom filter will be
+	 * set to the next largest prime number.
 	 * 
 	 * @param setSize The estimated number of elements in the set.
 	 * @param bitsPerElement The lower bound on the number of bits per element in the set.
